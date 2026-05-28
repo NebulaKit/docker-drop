@@ -3,7 +3,7 @@
 This repository contains the Dockerfile and instructions for running the DROP v1.4.0 environment for RNA-seq diagnostics using DNAnexus Cloud Workstation.
 
 ## 🔗 Docker Hub
-[`kristinagrausa/drop:1.4.0`](https://hub.docker.com/repository/docker/kristinagrausa/drop)
+[`rsubioinfogroup/drop:1.4.0`](https://hub.docker.com/repository/docker/rsubioinfogroup/drop)
 
 ## 📦 Included
 - Dockerfile
@@ -22,9 +22,13 @@ If you use DROP, cite:
 
 ## 🛠 Usage (summary)
 ```bash
-docker pull kristinagrausa/drop:1.4.0
-docker run -ti -v $(pwd):/drop kristinagrausa/drop:1.4.0
-source /opt/conda/bin/activate DROP_1.4.0
+docker pull rsubioinfogroup/drop:latest
+
+docker run --rm -it \
+  -v /path/to/drop-project:/drop/analysis \
+  rsubioinfogroup/drop:latest
+
+snakemake --cores 8
 ```
 
 ## 🧾 License
